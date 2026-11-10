@@ -386,7 +386,7 @@
   <div id="screen-plus-intro" class="hidden">
     <div class="eyebrow">PRISMA · Autoavaliação PLUS</div>
     <h1>Perfil estrutural<br><span>4 eixos &amp; preferência operacional</span></h1>
-    <p class="sub">Esta versão estendida tem seis partes, todas de escolha forçada ou resposta rápida:</p>
+    <p class="sub">Esta versão estendida tem cinco partes, todas de escolha forçada ou resposta rápida:</p>
     <div class="card" style="margin-top:18px;">
       <div class="desc-block"><b>Parte 1 — Perfil estrutural (16 rodadas):</b> mapeia quatro eixos de comportamento — iniciativa/análise, forma de se expressar, ritmo de decisão e relação com estrutura/regras. É o seu jeito mais natural, instintivo.</div>
       <div class="desc-block"><b>Parte 2 — Percepção no ambiente (10 rodadas):</b> os mesmos quatro eixos, mas pensando em como você se comporta quando o ambiente de trabalho exige adaptação. A diferença entre as partes 1 e 2 mostra o quanto você precisa "se esticar" no dia a dia.</div>
@@ -452,7 +452,7 @@
         <div class="field"><label>CPF</label><input type="text" id="cmdPlusAvaliadoRE" placeholder="Ex.: 000.000.000-00"></div>
       </div>
       <div class="field-row">
-        <div class="field"><label>Equipe/Setor</label><input type="text" id="cmdPlusEquipe" placeholder="Ex.: ROCAM 12"></div>
+        <div class="field"><label>Equipe/Setor</label><input type="text" id="cmdPlusEquipe" placeholder="Ex.: Comercial · Time Norte"></div>
         <div class="field"><label>Data</label><input type="text" id="cmdPlusDataCampo" placeholder="dd/mm/aaaa"></div>
       </div>
     </div>
@@ -475,7 +475,7 @@
   <div id="screen-cmdplus-intro" class="hidden">
     <div class="eyebrow">PRISMA · Avaliação do Gestor PLUS</div>
     <h1>Perfil estrutural <span>observado</span></h1>
-    <p class="sub">Baseie-se apenas no que você observou em serviço — a regra é: você não avalia a pessoa, avalia o que ela FAZ.</p>
+    <p class="sub">Baseie-se apenas no que você observou no trabalho — a regra é: você não avalia a pessoa, avalia o que ela FAZ.</p>
     <div class="card" style="margin-top:18px;">
       <div class="desc-block"><b>Parte 1 — Perfil estrutural observado (12 rodadas):</b> escolha forçada, os mesmos quatro eixos D·I·S·C da Autoavaliação PLUS — mas observados por você, não autorrelatados pelo colaborador.</div>
       <div class="desc-block"><b>Parte 2 — Checklists comportamentais:</b> operacional, postura profissional, liderança (se aplicável) e método dos 30 segundos.</div>
@@ -679,7 +679,7 @@ const KNOW_BLOCKS = [
     opts:{ E:"Estudar a fundo até dominar aquele problema específico.",
            G:"Buscar uma solução prática rápida, mesmo sem dominar tudo.",
            N:"Reunir pessoas de áreas diferentes para resolver juntos." } },
-  { situacao:"Seu maior risco de desgaste no serviço, o que mais e o que menos se aplica a você:",
+  { situacao:"Seu maior risco de desgaste no trabalho, o que mais e o que menos se aplica a você:",
     keys:["E","G","N"],
     opts:{ E:"Isolamento, por focar demais em um único assunto.",
            G:"Superficialidade, por tentar abraçar tudo ao mesmo tempo.",
@@ -1054,7 +1054,7 @@ const DISC_STRUCT_BLOCKS = [
            I:"Pergunto pra alguém que já usa, ao vivo.",
            S:"Vou usando aos poucos, sem pressa de dominar tudo de uma vez.",
            C:"Leio o manual ou instrução antes de usar." } },
-  { situacao:"Numa reunião de passagem de serviço, o que mais e o que menos te representa:",
+  { situacao:"Numa reunião de passagem de turno ou de alinhamento da equipe, o que mais e o que menos te representa:",
     keys:["D","I","S","C"],
     opts:{ D:"Vou direto ao ponto, sem enrolar em detalhes.",
            I:"Gosto de comentar e trocar impressões, não só passar a informação seca.",
@@ -1084,7 +1084,7 @@ const DISC_STRUCT_BLOCKS = [
            I:"Prefiro pensar em voz alta, junto com a pessoa.",
            S:"Peço um tempo pra pensar com calma antes de responder.",
            C:"Busco dados e critérios concretos antes de opinar." } },
-  { situacao:"Ao organizar seu material/equipamento de serviço, o que mais e o que menos te representa:",
+  { situacao:"Ao organizar seu material/equipamento de trabalho, o que mais e o que menos te representa:",
     keys:["D","I","S","C"],
     opts:{ D:"Não ligo muito pra organização, contanto que funcione.",
            I:"Gosto de comentar/mostrar como organizei pros colegas.",
@@ -1183,15 +1183,15 @@ const DISC_PERCEP_BLOCKS = [
 // ---- Parte 3: Ponderação & Perspectiva (7 itens likert, resposta única — sem escolha forçada) ----
 const LIKERT_LABELS_PLUS = ["Discordo totalmente","Discordo","Neutro","Concordo","Concordo totalmente"];
 const PONDERACAO_ITEMS = [
-  { text:"Ao decidir algo importante no serviço, me baseio mais nos fatos e nos dados concretos da situação do que no que as pessoas envolvidas estão sentindo.", reverse:false },
+  { text:"Ao decidir algo importante no trabalho, me baseio mais nos fatos e nos dados concretos da situação do que no que as pessoas envolvidas estão sentindo.", reverse:false },
   { text:"Antes de aplicar uma medida mais dura, considero bastante o impacto emocional que isso vai ter na pessoa.", reverse:true },
   { text:"Consigo manter uma decisão mesmo sabendo que ela vai desagradar ou magoar alguém.", reverse:false },
   { text:"Tenho dificuldade de ser totalmente objetivo quando a situação envolve alguém que já conheço ou tenho afeto.", reverse:true },
 ];
 const PERSPECTIVA_ITEMS = [
-  { text:"Hoje, consigo enxergar soluções para os principais desafios que estou enfrentando no serviço.", reverse:false },
-  { text:"Meus objetivos dentro da corporação parecem alcançáveis no médio prazo.", reverse:false },
-  { text:"Estou desanimado(a) em relação ao que vem pela frente na corporação.", reverse:true },
+  { text:"Hoje, consigo enxergar soluções para os principais desafios que estou enfrentando no trabalho.", reverse:false },
+  { text:"Meus objetivos dentro da empresa parecem alcançáveis no médio prazo.", reverse:false },
+  { text:"Estou desanimado(a) em relação ao que vem pela frente na empresa.", reverse:true },
 ];
 
 // ---- Eixos derivados (combinação simples entre pares de D/I/S/C) ----
@@ -1710,7 +1710,7 @@ function buildMudancasHtml(r){
   ).join('; ');
   let tail;
   if(r.mudancas === 'Insustentável'){
-    tail = ' Iniciativa (A) e Estrutura (F) se invertem e ficam do mesmo lado na percepção — combinação que costuma gerar insegurança em decisões estratégicas e ambiguidade de comportamento sob pressão. Vale atenção redobrada ao nível de estresse.';
+    tail = ' Dominância (D) e Conformidade (C) se invertem e ficam do mesmo lado na percepção — combinação que costuma gerar insegurança em decisões estratégicas e ambiguidade de comportamento sob pressão. Vale atenção redobrada ao nível de estresse.';
   } else if(r.flippedAxes.length <= 2){
     tail = ' Sustentar essa adaptação por muito tempo exige energia real.';
   } else {
@@ -1809,7 +1809,7 @@ function showPlusResults(){
         <div class="idx-card">
           <div class="idx-label">Perspectiva</div>
           <div class="idx-value">${r.perspectiva}</div>
-          <div class="idx-desc">Como você está enxergando o momento atual e os desafios à frente na corporação.</div>
+          <div class="idx-desc">Como você está enxergando o momento atual e os desafios à frente na empresa.</div>
         </div>
       </div>
     </div>
@@ -1993,14 +1993,14 @@ const CHECKLIST_OP = [
    lo:"Atua de forma isolada, atrapalha ou gera atrito com o restante da equipe.",
    hi:"Se integra bem, apoia os colegas e facilita o trabalho conjunto."},
   {label:"Mantém disciplina e segurança",
-   lo:"Ignora procedimentos de segurança ou normas disciplinares em serviço.",
+   lo:"Ignora procedimentos de segurança ou normas disciplinares no trabalho.",
    hi:"Segue rigorosamente os protocolos de segurança e disciplina em toda a atuação."},
 ];
 
 const CHECKLIST_POSTURA = [
   {label:"Pontualidade",
    lo:"Chega atrasado ou sai antes do horário com frequência.",
-   hi:"Está sempre no horário, pronto para o início do serviço."},
+   hi:"Está sempre no horário, pronto para o início do expediente."},
   {label:"Apresentação e materiais de trabalho em ordem",
    lo:"Materiais ou equipamentos de trabalho incompletos, mal cuidados ou fora do padrão.",
    hi:"Materiais e equipamentos de trabalho sempre completos, cuidados e dentro do padrão."},
@@ -2032,8 +2032,8 @@ const CHECKLIST_LID = [
    lo:"Deixa a equipe no escuro sobre decisões ou mudanças que a afetam.",
    hi:"Comunica decisões e mudanças com clareza e antecedência à equipe."},
   {label:"Corrige sem humilhar",
-   lo:"Corrige expondo o subordinado ou de forma agressiva na frente de outros.",
-   hi:"Corrige de forma firme e respeitosa, preservando a dignidade do subordinado."},
+   lo:"Corrige expondo o liderado ou de forma agressiva na frente de outros.",
+   hi:"Corrige de forma firme e respeitosa, preservando a dignidade do liderado."},
   {label:"Mantém o moral da equipe",
    lo:"A equipe se mostra desmotivada ou desgastada sob a liderança dele.",
    hi:"A equipe se mantém motivada e coesa mesmo em momentos difíceis."},
@@ -2041,7 +2041,7 @@ const CHECKLIST_LID = [
    lo:"Demora demais para decidir, ou decide de forma precipitada sem necessidade.",
    hi:"Decide no momento certo, nem cedo nem tarde demais, considerando a situação."},
   {label:"Assume responsabilidade",
-   lo:"Transfere a culpa para subordinados ou terceiros diante de um erro da equipe.",
+   lo:"Transfere a culpa para liderados ou terceiros diante de um erro da equipe.",
    hi:"Assume a responsabilidade pelas decisões e resultados da equipe, inclusive falhas."},
 ];
 
@@ -2382,7 +2382,7 @@ const DISC_STRUCT_OBS_BLOCKS = [
            I:"Prefere alinhar verbalmente com todo mundo antes de sair.",
            S:"Prefere esperar mais informação antes de definir qualquer coisa.",
            C:"Prefere montar uma checklist antes de sair, mesmo com o tempo curto." } },
-  { situacao:"Numa reunião de passagem de serviço, o que mais e o que menos representa esse colaborador:",
+  { situacao:"Numa reunião de passagem de turno ou de alinhamento da equipe, o que mais e o que menos representa esse colaborador:",
     keys:["D","I","S","C"],
     opts:{ D:"Vai direto ao ponto, sem enrolar em detalhes.",
            I:"Gosta de comentar e trocar impressões, não só passar a informação seca.",
@@ -2406,7 +2406,7 @@ const DISC_STRUCT_OBS_BLOCKS = [
            I:"Usa a conversa como principal ferramenta pra manter o controle da situação.",
            S:"Mantém o ritmo calmo, sem acelerar desnecessariamente.",
            C:"Segue rigorosamente a sequência de segurança do procedimento." } },
-  { situacao:"Ao organizar o material/equipamento de serviço, o que mais e o que menos representa esse colaborador:",
+  { situacao:"Ao organizar o material/equipamento de trabalho, o que mais e o que menos representa esse colaborador:",
     keys:["D","I","S","C"],
     opts:{ D:"Não liga muito pra organização, contanto que funcione.",
            I:"Gosta de comentar/mostrar como organizou pros colegas.",
@@ -2528,7 +2528,7 @@ function renderCmdPlusForm(){
   el.innerHTML = `
     <div class="eyebrow">PRISMA · Avaliação do Gestor PLUS</div>
     <h1>Ficha de <span>avaliação</span></h1>
-    <p class="sub">Avaliando <b style="color:var(--text)">${cmdPlusData.avaliadoNome}</b> (${cmdPlusData.avaliadoPosto}). Baseie-se apenas no que você observou em serviço.</p>
+    <p class="sub">Avaliando <b style="color:var(--text)">${cmdPlusData.avaliadoNome}</b> (${cmdPlusData.avaliadoPosto}). Baseie-se apenas no que você observou no trabalho.</p>
     <div class="note" style="border-left-color:var(--danger);">Documento de uso interno do avaliador — não deve ser entregue ao avaliado.</div>
 
     <div class="section-title">Checklist operacional (durante o atendimento)</div>
@@ -2537,7 +2537,7 @@ function renderCmdPlusForm(){
       <div class="interp-box hidden" id="interp-plus-op"></div>
     </div>
 
-    <div class="section-title">Checklist de postura profissional (rotina e quartel)</div>
+    <div class="section-title">Checklist de postura profissional (rotina e ambiente de trabalho)</div>
     <div class="card">
       <div id="clp-postura"></div>
     </div>
@@ -2871,7 +2871,7 @@ function showCmdPlusResult(){
       ${checklistDivergenceNote(opRanked, cmdPlusAssess.geral.op)}
     </div>
 
-    <div class="section-title">Checklist de postura profissional (rotina e quartel)</div>
+    <div class="section-title">Checklist de postura profissional (rotina e ambiente de trabalho)</div>
     <div class="card">
       <div class="temp-bars" id="cmdPlusPosturaFcBars"></div>
       <div class="desc-block" style="margin-top:8px;"><b>Nível geral informado:</b> ${cmdPlusAssess.geral.postura}/5 — ${GERAL_LABELS[cmdPlusAssess.geral.postura-1]}</div>
